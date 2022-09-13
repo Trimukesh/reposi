@@ -12,6 +12,6 @@
     # The name of the resource
       name: decyrpt
     # The decrypt secret name
-      decryptSecretName: 
+      decryptSecretName: ${{ secrets.TRI }}
     # The decrypt secret value
-      decryptSecretValue:  
+      decryptSecretValue: Hai
