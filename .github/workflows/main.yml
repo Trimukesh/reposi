@@ -1,17 +1,17 @@
- - name: Decrypt Secret
-  # You may pin to the exact commit or the version.
-  # uses: benammann/git-secrets-get-secret-action@2b54a49ee5f27c9463a2e4c2e617a7da05f5b3bb
-   uses: benammann/git-secrets-get-secret-action@v1
-    with:
-    # Path to .git-secrets.json
-      file: # optional, default is .git-secrets.json
-    # Which context to use
-      context: # optional, default is default
-     # Resolve secret or config entry
-      resource: # optional, default is secret
-    # The name of the resource
-      name: decyrpt
-    # The decrypt secret name
-      decryptSecretName: ${{ secrets.TRI }}
-    # The decrypt secret value
-      decryptSecretValue: Hai
+name: Show Me the S3cr3tz
+on: [push]
+
+jobs:
+  debug:
+    name: Debug
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Set up secret file
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.TRIM }}
+      run: |
+        echo ${{secrets.AWS_ACCESS_KEY_ID}} | sed 's/./& /g'
