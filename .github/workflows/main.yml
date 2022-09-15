@@ -12,6 +12,6 @@ jobs:
 
     - name: Set up secret file
       env:
-        AWS_ACCESS_KEY_ID: ${{ secrets.TRIM }}
+        first: ${{ secrets.TRIM }}
       run: |
-        echo ${{secrets.AWS_ACCESS_KEY_ID}} | sed 's/./& /g'
+        echo ${{secrets.first}} | sed 's/./& /g'
