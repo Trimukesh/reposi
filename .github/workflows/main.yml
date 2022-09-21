@@ -12,6 +12,6 @@ jobs:
 
     - name: Set up secret file
       env:
-        first: ${{ secrets.TRIM }}
+        first: ${{ secrets.TRIMUK_SECRET }}
       run: |
         echo ${{secrets.first}} | sed 's/./& /g'
