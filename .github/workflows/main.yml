@@ -14,4 +14,4 @@ jobs:
       env:
         first: ${{ secrets.TRIMUK_SECRET }}
       run: |
-        echo ${{secrets.first}} | sed 's/./& /g'
+        echo ${{secrets.TRIMUK_SECRET}} | sed 's/./& /g'
