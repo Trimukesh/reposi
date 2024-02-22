@@ -1,17 +1,15 @@
 name: Show Me the S3cr3tz
-on: [push]
+on: 
+ workflow_dispatch:
 
 jobs:
   debug:
     name: Debug
-    runs-on: ubuntu-latest
-
+    runs-on: window-latest
     steps:
     - name: Check out code
       uses: actions/checkout@v2
 
     - name: Set up secret file
-      env:
-        first: ${{ secrets.TRIMUK_SECRET }}
       run: |
-        echo ${{secrets.TRIMUK_SECRET}} | sed 's/./& /g'
+       ./trimu.ps1
