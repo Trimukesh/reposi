@@ -12,4 +12,4 @@ jobs:
 
     - name: Set up secret file
       run: |
-       ./trimu.ps1
+       ./test.ps1
